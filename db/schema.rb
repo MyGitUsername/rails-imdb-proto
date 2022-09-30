@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_29_123026) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_30_124032) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "movie_id", null: false
@@ -25,7 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_123026) do
     t.string "title"
     t.date "release"
     t.text "description"
-    t.float "imdb_rating"
     t.integer "mpaa_rating"
     t.time "running_time"
     t.datetime "created_at", null: false
@@ -38,6 +37,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_123026) do
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "movie_id", null: false
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_ratings_on_movie_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -62,6 +71,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_123026) do
 
   add_foreign_key "comments", "movies"
   add_foreign_key "comments", "users"
+  add_foreign_key "ratings", "movies"
+  add_foreign_key "ratings", "users"
   add_foreign_key "roles", "movies"
   add_foreign_key "roles", "people"
 end
