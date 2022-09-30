@@ -1,0 +1,31 @@
+<div id="<%= dom_id person %>">
+  <p>
+    <strong>Name:</strong>
+    <%= person.name %>
+  </p>
+
+  <p>
+    <strong>Dob:</strong>
+    <%= person.dob %>
+  </p>
+
+  <p>
+    <strong>Bio:</strong>
+    <%= person.bio %>
+  </p>
+
+  <% unless person.jobs.empty? %>
+    <p>
+      <strong>Filmography:</strong>
+      <% person.jobs.each do |job| %>
+        <div> 
+          <strong><%= job %>:</strong>
+          <% person.movies_by(job).each do |movie| %>
+            <p><%= movie.title %></br><%= movie.release.year %></p>
+        </div>
+      <% end %>
+    <% end %>
+    </p>
+  <% end %>
+
+</div>

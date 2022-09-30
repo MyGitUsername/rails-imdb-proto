@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @movie %>
+
+<h2> Comments </h2>
+<%= render @movie.comments %>
+<div>
+  <%= link_to "Add a Comment", new_movie_comment_url(@movie) %>
+</div>
+
+<div>
+  <%= link_to "Back to movies", movies_path %>
+</div>

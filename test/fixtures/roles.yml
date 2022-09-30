@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job: MyString
+  specification: MyString
+  person: one
+  movie: one
+
+two:
+  job: MyString
+  specification: MyString
+  person: two
+  movie: two

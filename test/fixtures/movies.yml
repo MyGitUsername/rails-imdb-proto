@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  release: 2022-09-28
+  description: MyText
+  imdb_rating: 1.5
+  mpaa_rating: 1
+  running_time: 2022-09-28 05:03:54
+
+two:
+  title: MyString
+  release: 2022-09-28
+  description: MyText
+  imdb_rating: 1.5
+  mpaa_rating: 1
+  running_time: 2022-09-28 05:03:54

@@ -1,0 +1,41 @@
+<div id="<%= dom_id movie %>">
+  <p>
+    <strong>Title:</strong>
+    <%= movie.title %>
+  </p>
+
+  <p>
+    <strong>Release:</strong>
+    <%= movie.release %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= movie.description %>
+  </p>
+
+  <p>
+    <strong>Imdb rating:</strong>
+    <%= movie.imdb_rating %>
+  </p>
+
+  <p>
+    <strong>Mpaa rating:</strong>
+    <%= movie.mpaa_rating %>
+  </p>
+
+  <p>
+    <strong>Running time:</strong>
+    <%= movie.running_time %>
+  </p>
+
+  <% unless movie.roles.empty? %>
+  <p>
+    <strong>Cast:</strong>
+    <% movie.roles.each do |role| %>
+      <%= role.job %> <%= link_to role.person.name, role.person %>
+    <% end %>
+  </p>
+<% end %>
+
+</div>
